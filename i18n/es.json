@@ -56,7 +56,8 @@
       }
     ],
     "demoLink": "Recorre la demostración",
-    "pageLink": "Lee sobre Should"
+    "pageLink": "Lee sobre Should",
+    "ebookLink": "Lee El método Should"
   },
   "day": {
     "eyebrow": "Una mañana con Should",
@@ -165,7 +166,7 @@
       {
         "day": "Lunes",
         "title": "Valores y metas",
-        "body": "Una sesión sobre lo que te importa: tus valores, algunas metas para el año y cómo se ve lo bueno en cada parte de la vida. Después protegemos tus cuentas con un gestor de contraseñas, verificación en dos pasos y un congelamiento de crédito. La cena cierra con un intercambio de problemas."
+        "body": "Una sesión sobre lo que te importa: tus valores, lo que nunca pasa sin tu sí, lo que nunca se comparte y cómo se ve una buena semana. Después protegemos tus cuentas con un gestor de contraseñas, verificación en dos pasos y un congelamiento de crédito. La cena cierra con un intercambio de problemas."
       },
       {
         "day": "Martes",
