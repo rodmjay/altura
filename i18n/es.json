@@ -18,7 +18,7 @@
   "hero": {
     "eyebrow": "Altura · un retiro para reiniciar tu vida · Costa Rica",
     "title": "Ven por una semana. Configura tu propio Should.",
-    "body": "Should es un equipo de agentes de IA que se encarga de la administración de tu vida: correo, calendario, pendientes, cuentas y metas. Altura es la semana en que configuras el tuyo, en tu propia computadora y con tu propia cuenta de Claude, en el Valle Central de Costa Rica, junto a profesionales de todo el mundo. Regresas a casa con una configuración hecha a la medida de tu vida y una red de contactos que dura.",
+    "body": "Should es un equipo de agentes de IA que se encarga de la administración de tu vida: correo, calendario, pendientes, cuentas y metas. Altura es la semana en que configuras el tuyo, en tu propia computadora y con tu propia cuenta de Claude, en el Valle Central de Costa Rica, junto a un grupo pequeño de profesionales que estamos invitando de todo el mundo. Regresas a casa con una configuración hecha a la medida de tu vida y un chat del grupo que sigue abierto.",
     "cta": "Únete a la lista piloto",
     "ctaSecondary": "Mira lo que hace Should",
     "status": "Grupo piloto. Aún no hay fechas ni precio, y anotarte no te compromete a nada.",
@@ -139,8 +139,8 @@
     "points": [
       {
         "icon": "laptop_mac",
-        "title": "En tu propia computadora",
-        "body": "Tu Should corre en tu máquina, con tu propia cuenta de Claude. Altura nunca guarda tus datos."
+        "title": "Tus datos se quedan contigo",
+        "body": "Tu Should corre en tu máquina, con tu propia cuenta de Claude. Altura nunca guarda lo que contiene tu Should. Te ayudamos en tu pantalla cuando lo pidas, y nunca escribimos ni guardamos tus contraseñas."
       },
       {
         "icon": "link",
@@ -167,7 +167,7 @@
       {
         "day": "Lunes",
         "title": "Valores y metas",
-        "body": "Una sesión sobre lo que te importa: tus valores, lo que nunca pasa sin tu sí, lo que nunca se comparte y cómo se ve una buena semana. Después protegemos tus cuentas con un gestor de contraseñas, verificación en dos pasos y un congelamiento de crédito. La cena cierra con un intercambio de problemas."
+        "body": "Una sesión sobre lo que te importa: tus valores, lo que nunca pasa sin tu sí, lo que nunca se comparte y cómo se ve una buena semana. Después proteges tus cuentas con un gestor de contraseñas, verificación en dos pasos y un congelamiento de crédito, con nosotros a tu lado."
       },
       {
         "day": "Martes",
@@ -264,7 +264,7 @@
       {
         "icon": "checklist",
         "title": "Accesos a mano",
-        "body": "Tus inicios de sesión del correo, el calendario y la app de pendientes, y tu teléfono para los códigos de verificación. Te mandamos una lista corta antes del viaje."
+        "body": "Tus inicios de sesión del correo, el calendario y la app de pendientes, y tu teléfono para los códigos de verificación. Los agentes del banco son opcionales y solo de lectura. Te mandamos una lista corta antes del viaje."
       }
     ]
   },
@@ -286,7 +286,7 @@
       },
       {
         "q": "¿Quién más va a estar?",
-        "a": "Un grupo pequeño de profesionales de distintos países y áreas. La lista piloto nos ayuda a formar el grupo, y sabrás quién viene antes de viajar."
+        "a": "Un grupo pequeño de profesionales de distintas áreas y, ojalá, de distintos países. La lista piloto nos ayuda a formar el grupo, y sabrás quién viene antes de viajar."
       },
       {
         "q": "Uso ChatGPT. ¿Puedo ir igual?",
@@ -461,12 +461,12 @@
     "doneEyebrow": "Ya estás en la lista",
     "doneTitle": "Gracias.",
     "doneBody": "Te escribiremos cuando estén las fechas del piloto.",
-    "privacy": "Tus respuestas solo le llegan al organizador, por Google Forms.",
+    "privacy": "Tus respuestas solo le llegan al organizador, por Google Forms, y solo se usan para planear el piloto. Para borrarlas cuando quieras, escribe a admin@squared.pro.",
     "choose": "Elige una opción"
   },
   "foot": {
     "tagline": "Un retiro para reiniciar tu vida · Costa Rica",
-    "disclaimer": "Altura es un retiro planeado, y Should es un prototipo que funciona. El itinerario, los detalles del lugar y lo incluido son un borrador para el piloto y van a cambiar.",
+    "disclaimer": "Altura es un retiro planeado, y Should es un prototipo que funciona. El itinerario, los detalles del lugar y lo incluido son un borrador para el piloto y van a cambiar. Altura no está afiliada ni respaldada por Anthropic.",
     "credits": "Fotos de Wikimedia Commons y Flickr: atardecer en Grecia (portada), Rodtico21 (CC BY-SA 4.0); cafetales, DoNotLick (CC BY 2.0); piscina, s9-4pr (CC BY 2.0); catarata de La Paz, Federico Mata (CC BY 3.0); cráter del Poás, Peter Andersen (CC BY 2.5). Capturas de Should de la demostración pública, con datos inventados."
   },
   "notFound": {
@@ -477,12 +477,12 @@
   "people": {
     "eyebrow": "La gente",
     "title": "Conoce a profesionales de todo el mundo",
-    "body": "Altura es un grupo pequeño de profesionales de distintos países y áreas, cada uno armando su propio Should. La semana está pensada para que los conozcas.",
+    "body": "Altura es un grupo pequeño de profesionales, cada uno armando su propio Should, y los estamos invitando de todo el mundo. La semana está pensada para que los conozcas.",
     "items": [
       {
         "icon": "public",
-        "title": "Un grupo pequeño e internacional",
-        "body": "Personas de distintos países, industrias y etapas de la vida, un grupo tan pequeño que para el martes todos se conocen."
+        "title": "Un grupo pequeño, abierto al mundo",
+        "body": "Invitamos a personas de distintas áreas y, ojalá, de distintos países y etapas de la vida. Un grupo tan pequeño que para el martes todos se conocen."
       },
       {
         "icon": "restaurant",

@@ -18,7 +18,7 @@
   "hero": {
     "eyebrow": "Altura · a life reset retreat · Costa Rica",
     "title": "Come for a week. Set up your own Should.",
-    "body": "Should is a team of AI agents that runs the admin of your life: email, calendar, to-dos, bills and goals. Altura is the week you set up your own, on your own laptop and your own Claude account, in Costa Rica's Central Valley, alongside professionals from around the world. You go home with a setup built around your life, and a network that lasts.",
+    "body": "Should is a team of AI agents that runs the admin of your life: email, calendar, to-dos, bills and goals. Altura is the week you set up your own, on your own laptop and your own Claude account, in Costa Rica's Central Valley, alongside a small group of professionals we're inviting from around the world. You go home with a setup built around your life, and a cohort chat that stays open.",
     "cta": "Join the pilot list",
     "ctaSecondary": "See what Should does",
     "status": "Pilot cohort. Dates and price aren't set yet, and signing up commits you to nothing.",
@@ -139,8 +139,8 @@
     "points": [
       {
         "icon": "laptop_mac",
-        "title": "On your own laptop",
-        "body": "Your Should runs on your machine, with your own Claude account. Altura never holds your data."
+        "title": "Your data stays with you",
+        "body": "Your Should runs on your machine, with your own Claude account. Altura never stores what your Should holds. We help at your screen when you ask, and never type or keep your passwords."
       },
       {
         "icon": "link",
@@ -167,7 +167,7 @@
       {
         "day": "Monday",
         "title": "Values and goals",
-        "body": "A sit-down on what matters to you: your values, what never happens without your yes, what's never shared, and what a good week looks like. Then we lock down your accounts with a password manager, two-factor sign-in and a credit freeze. Dinner ends with a problem swap."
+        "body": "A sit-down on what matters to you: your values, what never happens without your yes, what's never shared, and what a good week looks like. Then you lock down your accounts with a password manager, two-factor sign-in and a credit freeze, with us beside you."
       },
       {
         "day": "Tuesday",
@@ -264,7 +264,7 @@
       {
         "icon": "checklist",
         "title": "Logins you can reach",
-        "body": "Sign-ins for your email, calendar and to-do app, and your phone for two-factor codes. We send a short checklist before you fly."
+        "body": "Sign-ins for your email, calendar and to-do app, and your phone for two-factor codes. Bank agents are optional and read-only. We send a short checklist before you fly."
       }
     ]
   },
@@ -286,7 +286,7 @@
       },
       {
         "q": "Who else will be there?",
-        "a": "A small group of professionals from different countries and fields. The pilot list helps us shape the group, and you'll know who's coming before you fly."
+        "a": "A small group of professionals from different fields, and we hope different countries. The pilot list helps us shape the group, and you'll know who's coming before you fly."
       },
       {
         "q": "I use ChatGPT. Can I still come?",
@@ -461,12 +461,12 @@
     "doneEyebrow": "You're on the list",
     "doneTitle": "Thank you.",
     "doneBody": "We'll email you when the pilot dates are set.",
-    "privacy": "Your answers go only to the organizer, through Google Forms.",
+    "privacy": "Your answers go only to the organizer, through Google Forms, and are used only to plan the pilot. To delete them anytime, email admin@squared.pro.",
     "choose": "Choose one"
   },
   "foot": {
     "tagline": "A life reset retreat · Costa Rica",
-    "disclaimer": "Altura is a planned retreat, and Should is a working prototype. The itinerary, place details and inclusions are a draft for the pilot and will change.",
+    "disclaimer": "Altura is a planned retreat, and Should is a working prototype. The itinerary, place details and inclusions are a draft for the pilot and will change. Altura isn't affiliated with or endorsed by Anthropic.",
     "credits": "Photos via Wikimedia Commons and Flickr: Grecia sunset (hero), Rodtico21 (CC BY-SA 4.0); coffee hills, DoNotLick (CC BY 2.0); pool, s9-4pr (CC BY 2.0); La Paz waterfall, Federico Mata (CC BY 3.0); Poás crater, Peter Andersen (CC BY 2.5). Should screenshots from the public demo, with made-up data."
   },
   "notFound": {
@@ -477,12 +477,12 @@
   "people": {
     "eyebrow": "The people",
     "title": "Meet professionals from around the world",
-    "body": "Altura is a small group of professionals from different countries and fields, each building their own Should. The week is built so you get to know them.",
+    "body": "Altura is a small group of professionals, each building their own Should, and we're inviting them from around the world. The week is built so you get to know them.",
     "items": [
       {
         "icon": "public",
-        "title": "A small, international group",
-        "body": "People from different countries, industries and stages of life, small enough that everyone knows everyone by Tuesday."
+        "title": "A small group, open to the world",
+        "body": "We're inviting people from different fields and, we hope, different countries and stages of life. Small enough that everyone knows everyone by Tuesday."
       },
       {
         "icon": "restaurant",
