@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es-419" translate="no" class="notranslate" data-brand="should">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){const SUPPORTED = ["en", "es"];
+const HTML_LANG = { en: "en", es: "es-419" };
+const NAMES = { en: "English", es: "Español" };
+const KEY = "ds-lang";
+
+const ES_ZONES = new Set([
+  "America/Costa_Rica", "America/Mexico_City", "America/Monterrey", "America/Merida", "America/Cancun", "America/Chihuahua",
+  "America/Tijuana", "America/Hermosillo", "America/Mazatlan", "America/Guatemala", "America/El_Salvador", "America/Tegucigalpa",
+  "America/Managua", "America/Panama", "America/Bogota", "America/Caracas", "America/Lima", "America/Guayaquil", "America/La_Paz",
+  "America/Santiago", "America/Asuncion", "America/Montevideo", "America/Argentina/Buenos_Aires", "America/Argentina/Cordoba",
+  "America/Argentina/Mendoza", "America/Santo_Domingo", "America/Havana", "America/Puerto_Rico", "Europe/Madrid", "Atlantic/Canary",
+]);
+
+const ok = (l) => (l && SUPPORTED.includes(l) ? l : null);
+const short = (l) => String(l || "").toLowerCase().split(/[-_]/)[0];
+
+function store(lang) {
+  try { lang ? localStorage.setItem(KEY, lang) : localStorage.removeItem(KEY); } catch (e) {  }
+}
+function stored() {
+  try { return localStorage.getItem(KEY); } catch (e) { return null; }
+}
+
+function pickLang({ fallback = "en", url = globalThis.location, doc = globalThis.document, nav = globalThis.navigator } = {}) {
+  if (url) {
+    const seg = url.pathname.split("/").map(short).find((s) => SUPPORTED.includes(s));
+    const q = ok(short(new URLSearchParams(url.search).get("lang")));
+    if (q) return q;
+    if (seg) return seg;
+  }
+  const mine = ok(stored());
+  if (mine) return mine;
+  const hint = ok(short(doc?.querySelector('meta[name="lang-hint"]')?.content));
+  if (hint) return hint;
+  for (const l of nav?.languages || [nav?.language]) { const s = ok(short(l)); if (s) return s; }
+  try { if (ES_ZONES.has(Intl.DateTimeFormat().resolvedOptions().timeZone)) return "es"; } catch (e) {  }
+  return fallback;
+}
+
+function applyLang(lang, doc = globalThis.document) {
+  const root = doc.documentElement;
+  root.lang = HTML_LANG[lang] || lang;
+  root.setAttribute("translate", "no");
+  root.classList.add("notranslate");
+}
+
+function t(dict, key, vars) {
+  let v = key.split(".").reduce((o, k) => (o == null ? o : o[k]), dict);
+  if (v == null) { console.warn(`i18n: missing "${key}"`); return key; }
+  if (typeof v === "string" && vars) v = v.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+  return v;
+}
+
+function translate(dict, root = globalThis.document) {
+  root.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(dict, el.dataset.i18n); });
+  root.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = t(dict, el.dataset.i18nHtml); });
+  root.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+    el.dataset.i18nAttr.split(";").forEach((pair) => {
+      const [attr, key] = pair.split(":").map((s) => s.trim());
+      if (attr && key) el.setAttribute(attr, t(dict, key));
+    });
+  });
+}
+
+function langMenu(container, { current, label = "Language", onChange } = {}) {
+  container.classList.add("ds-lang");
+  container.innerHTML = `<label><span class="ds-lang-label">${label}</span><select aria-label="${label}">${SUPPORTED
+    .map((l) => `<option value="${l}" lang="${HTML_LANG[l]}"${l === current ? " selected" : ""}>${NAMES[l]}</option>`)
+    .join("")}</select></label>`;
+  const sel = container.querySelector("select");
+  sel.addEventListener("change", () => {
+    const lang = sel.value;
+    store(lang);
+    try {
+      const u = new URL(globalThis.location.href);
+      u.searchParams.set("lang", lang);
+      history.replaceState(null, "", u);
+    } catch (e) {  }
+    onChange?.(lang);
+  });
+  return { set(lang, newLabel) { sel.value = lang; if (newLabel) { sel.setAttribute("aria-label", newLabel); container.querySelector(".ds-lang-label").textContent = newLabel; } } };
+}
+
+function compareDicts(a, b, names = ["en", "es"]) {
+  const out = [];
+  const walk = (x, y, path) => {
+    const tx = Array.isArray(x) ? "array" : typeof x, ty = Array.isArray(y) ? "array" : typeof y;
+    if (y === undefined) return out.push(`${path}: missing in ${names[1]}`);
+    if (x === undefined) return out.push(`${path}: missing in ${names[0]}`);
+    if (tx !== ty) return out.push(`${path}: ${names[0]} is ${tx}, ${names[1]} is ${ty}`);
+    if (tx === "array") {
+      if (x.length !== y.length) out.push(`${path}: ${names[0]} has ${x.length} items, ${names[1]} has ${y.length}`);
+      for (let i = 0; i < Math.max(x.length, y.length); i++) walk(x[i], y[i], `${path}[${i}]`);
+    } else if (tx === "object" && x && y) {
+      for (const k of new Set([...Object.keys(x), ...Object.keys(y)])) walk(x[k], y[k], path ? `${path}.${k}` : k);
+    } else if (tx === "string") {
+      if (!x.trim()) out.push(`${path}: empty in ${names[0]}`);
+      if (!y.trim()) out.push(`${path}: empty in ${names[1]}`);
+    }
+  };
+  walk(a, b, "");
+  return out;
+}
+
+var want=pickLang();
+try{var u=new URL(location.href),q=u.searchParams.get("lang");if(q==="en"||q==="es"){want=q;localStorage.setItem("ds-lang",q);u.searchParams.delete("lang");history.replaceState(null,"",u)}}catch(e){}if(want!=="es")location.replace("../"+location.search+location.hash);})();</script>
+<title>Altura · Vete de Costa Rica con tu propio Should</title>
+<meta name="description" content="Altura es un retiro para reiniciar tu vida en el Valle Central de Costa Rica. En una semana configuras tu propio Should, un equipo de agentes de IA que se encarga de la administración de tu vida, en tu propia computadora y alrededor de tus metas.">
+<meta name="google" content="notranslate">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f3ec">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121412">
+<link rel="canonical" href="https://rodmjay.github.io/altura/es/">
+<link rel="alternate" hreflang="en" href="https://rodmjay.github.io/altura/">
+<link rel="alternate" hreflang="es-419" href="https://rodmjay.github.io/altura/es/">
+<link rel="alternate" hreflang="x-default" href="https://rodmjay.github.io/altura/">
+<meta property="og:title" content="Altura · Vete de Costa Rica con tu propio Should">
+<meta property="og:description" content="Altura es un retiro para reiniciar tu vida en el Valle Central de Costa Rica. En una semana configuras tu propio Should, un equipo de agentes de IA que se encarga de la administración de tu vida, en tu propia computadora y alrededor de tus metas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rodmjay.github.io/altura/es/">
+<meta property="og:image" content="https://rodmjay.github.io/altura/img/hero-grecia-sunset.jpg">
+<meta property="og:locale" content="es_419">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M7 41 24 7 41 41M13 29h22' fill='none' stroke='%231f6f54' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M17.5 29a6.5 6.5 0 0 1 13 0z' fill='%23e88a60'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block">
+<link rel="stylesheet" href="../ds/design-system.css">
+<link rel="stylesheet" href="../home.css">
+</head>
+<body class="ds">
+<a class="skip" href="#main">Ir al contenido</a>
+
+<header class="bar">
+  <a class="mark" href="#top" aria-label="Altura, volver arriba"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 41 24 7 41 41"/><path d="M13 29h22"/><path class="sun" d="M17.5 29a6.5 6.5 0 0 1 13 0z"/></svg><span>Altura</span></a>
+  <nav aria-label="Secciones">
+    <a href="#should">Should</a><a href="#week">La semana</a><a href="#people">La gente</a><a href="#bring">Qué traer</a>
+  </nav>
+  <div class="bar-end">
+    <span class="ds-lang"><label><span class="ds-lang-label">Idioma</span><select id="lang" aria-label="Idioma" data-other="../"><option value="en" lang="en">English</option><option value="es" lang="es-419" selected>Español</option></select></label></span>
+    <a class="ds-btn sm bar-join" href="#join">Únete a la lista piloto</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <img class="hero-img" src="../img/hero-grecia-sunset.jpg" alt="Atardecer entre las nubes sobre las colinas de Grecia, en el Valle Central de Costa Rica" fetchpriority="high">
+    <div class="hero-copy ds-container">
+      <p class="ds-overline">Altura · un retiro para reiniciar tu vida · Costa Rica</p>
+      <h1>Ven por una semana. Vete con tu propio Should.</h1>
+      <p class="lede">Should es un equipo de agentes de IA que se encarga de la administración de tu vida: correo, calendario, pendientes, cuentas y metas. En Altura pasas una semana en el Valle Central de Costa Rica configurando el tuyo, en tu propia computadora, junto a profesionales de todo el mundo. Regresas a casa con él funcionando y con una red de contactos que dura.</p>
+      <div class="ds-row ctas">
+        <a class="ds-btn lg" href="#join">Únete a la lista piloto</a>
+        <a class="ds-btn outlined lg on-photo" href="#should">Mira lo que hace Should</a>
+      </div>
+      <p class="hero-status">Grupo piloto. Aún no hay fechas ni precio, y anotarte no te compromete a nada.</p>
+    </div>
+  </section>
+
+  <section id="should">
+    <div class="ds-container split">
+      <div>
+        <div class="head">
+          <p class="ds-overline">Lo que te llevas a casa</p>
+          <h2>Lo que Should hace todo el día</h2>
+          <p class="ds-variant lede">Should ya maneja la vida de una persona, todos los días. Resuelve lo pequeño por su cuenta y solo te trae las decisiones que de verdad son tuyas.</p>
+        </div>
+        <ul class="points">
+          <li><span class="ico" aria-hidden="true">sms</span><div><h3>Un mensaje cada mañana</h3><p>A las 8 AM: las tres cosas que importan hoy, lo que estás esperando y lo que necesita de ti. Nada más.</p></div></li><li><span class="ico" aria-hidden="true">groups</span><div><h3>Un equipo de agentes para lo pequeño</h3><p>Agentes de dinero, casa, salud, trabajo y viajes ordenan el correo, siguen las cuentas, archivan el papeleo y vigilan precios, para que no tengas que acordarte.</p></div></li><li><span class="ico" aria-hidden="true">touch_app</span><div><h3>Solo te llegan las decisiones reales</h3><p>Todo lo que gasta dinero, le escribe a alguien o no se puede deshacer espera tu sí. Respondes con 1, 2 o 3 desde tu teléfono.</p></div></li><li><span class="ico" aria-hidden="true">dashboard</span><div><h3>Un tablero para todo</h3><p>Cada agente tiene su escritorio en un tablero privado para tu computadora y tu teléfono, junto a tus proyectos y metas. También puede verse en la tele de tu casa.</p></div></li><li><span class="ico" aria-hidden="true">explore</span><div><h3>Empieza por tus valores</h3><p>Tus valores y metas deciden lo pequeño. Una sesión semanal los mantiene al día y convierte la semana en tres compromisos como máximo.</p></div></li>
+        </ul>
+        <div class="ds-row links">
+          <a class="ds-btn tonal" href="https://rodmjay.github.io/should/demo/" rel="noopener">Recorre la demostración</a>
+          <a class="ds-btn text" href="https://rodmjay.github.io/should/" rel="noopener">Lee sobre Should</a>
+        </div>
+      </div>
+      <figure class="phone-shot">
+        <img src="../img/should/today-phone.png" width="390" height="844" alt="La página Hoy de Should en un teléfono" loading="lazy">
+        <figcaption>De la demostración pública, con datos inventados.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="day">
+    <div class="ds-container split">
+      <div class="head">
+        <p class="ds-overline">Una mañana con Should</p>
+        <h2>Respondes con un número y sigues con tu día</h2>
+        <p class="ds-variant lede">No hay que abrir una app ni revisar nada. Should te escribe una cosa a la vez.</p>
+      </div>
+      <figure class="chat" aria-label="Ejemplo de conversación por mensaje">
+        <ol>
+          <li class="msg in">Buenos días. Hoy: dentista a las 10:30, llamar a Dana, y la renovación del registro del auto ya está lista. Esperando: al casero por el extractor del baño.</li><li class="msg in">Una decisión: tu gimnasio se renueva a $39 al mes el día 1. 1 renovar, 2 cambiar al plan de $25, 3 pregúntame el viernes.</li><li class="msg out">2</li><li class="msg in">Listo. El plan de $25 empieza el 1 de diciembre y quedó en tu lista para la revisión del viernes.</li>
+        </ol>
+        <figcaption>Un ejemplo inventado.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="shots">
+    <div class="ds-container">
+      <div class="head">
+        <p class="ds-overline">Míralo tú mismo</p>
+        <h2>El tablero que tus agentes mantienen al día</h2>
+        <p class="ds-variant lede">Estas imágenes vienen de la demostración pública de Should, que está en inglés. Todos los nombres, cifras y cuentas son inventados.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot"><a href="https://rodmjay.github.io/should/demo/" rel="noopener"><img src="../img/should/today.png" width="1280" height="860" alt="La página Hoy de Should: un resumen corto del día, tarjetas de pendientes, cuenta corriente, cuentas por pagar, pasos y puntaje de crédito, los pendientes de hoy y el calendario" loading="lazy"></a><figcaption>Hoy: el día en dos frases, tus tres cosas, el calendario y lo que los agentes están esperando.</figcaption></figure><figure class="shot"><a href="https://rodmjay.github.io/should/demo/" rel="noopener"><img src="../img/should/projects.png" width="1280" height="860" alt="La página Proyectos de Should: cuatro proyectos en marcha, la próxima fecha, tus próximos pasos y la tarjeta de un viaje con el único paso que te toca" loading="lazy"></a><figcaption>Proyectos: cada resultado que lleva más de un paso, con el único siguiente paso que te toca.</figcaption></figure><figure class="shot"><a href="https://rodmjay.github.io/should/demo/" rel="noopener"><img src="../img/should/desk.png" width="1280" height="860" alt="El escritorio del Asistente Ejecutivo en Should: su último reporte, las rutinas que corre y lo que nunca hace" loading="lazy"></a><figcaption>El escritorio de un agente: lo que hizo hoy, lo que corre y lo que nunca hace sin tu sí.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="stage">
+    <div class="ds-container">
+      <div class="head">
+        <p class="ds-overline">Dónde está hoy</p>
+        <h2>Claros sobre lo que es</h2>
+      </div>
+      <ul class="cards three">
+        <li class="ds-card outlined"><h3>Un prototipo que funciona</h3><p>Should maneja la vida de quien lo construyó, todos los días. No es una app terminada que se descarga, y cambia cada semana.</p></li><li class="ds-card outlined"><h3>Se configura a mano, contigo</h3><p>En Altura armamos tu copia juntos, paso a paso, con tus cuentas y tus reglas. Habrá algunos detalles por pulir.</p></li><li class="ds-card outlined"><h3>Sin resultados prometidos</h3><p>Puede quitarte mucho trabajo pequeño de encima. No va a arreglar tu dinero, tu salud ni tu carrera por ti, y no prometemos ingresos ni resultados.</p></li>
+      </ul>
+      <div class="head yours-head">
+        <p class="ds-overline">Tus datos</p>
+        <h2>Tu vida se queda en tu computadora</h2>
+      </div>
+      <ul class="points cols">
+        <li><span class="ico" aria-hidden="true">laptop_mac</span><div><h3>En tu propia computadora</h3><p>Tu Should corre en tu máquina, con tu propia cuenta de Claude. Altura nunca guarda tus datos.</p></div></li><li><span class="ico" aria-hidden="true">link</span><div><h3>Tus cuentas, tu acceso</h3><p>Conectas el correo, el calendario y la app de pendientes que ya usas, y eliges qué puede leer cada agente.</p></div></li><li><span class="ico" aria-hidden="true">rule</span><div><h3>Reglas que escribes tú</h3><p>Los agentes preguntan antes de dinero, mensajes a otras personas, borrados y configuraciones. Tú decides qué más deben preguntar.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="week">
+    <div class="ds-container">
+      <div class="head">
+        <p class="ds-overline">La semana</p>
+        <h2>De lo que te importa a tenerlo funcionando</h2>
+        <p class="ds-variant lede">Las mañanas son para construir y las tardes para el valle. Es un plan borrador para el piloto, así que los detalles van a cambiar.</p>
+      </div>
+      <ol class="days">
+        <li class="day d0"><p class="ds-overline">Domingo</p><h3>Llegada</h3><p>Te recogemos en el aeropuerto de San José, piscina y jardines, cena de bienvenida. Una revisión rápida de la computadora para que todos empiecen listos.</p></li><li class="day d1"><p class="ds-overline">Lunes</p><h3>Valores y metas</h3><p>Una sesión sobre lo que te importa: tus valores, algunas metas para el año y cómo se ve lo bueno en cada parte de la vida. Después protegemos tus cuentas con un gestor de contraseñas, verificación en dos pasos y un congelamiento de crédito. La cena cierra con un intercambio de problemas.</p></li><li class="day d2"><p class="ds-overline">Martes</p><h3>Conecta tus cuentas</h3><p>Claude Code en palabras sencillas, y luego tu correo, calendario y pendientes conectados. Se limpia la bandeja de entrada, todo queda en una sola lista y se programa tu mensaje de la mañana.</p></li><li class="day d3"><p class="ds-overline">Miércoles</p><h3>Descanso</h3><p>El volcán Poás al amanecer, aguas termales o un día tranquilo. Tu primer mensaje de la mañana te llega donde estés.</p></li><li class="day d4"><p class="ds-overline">Jueves</p><h3>Elige tus agentes</h3><p>Escoges los agentes que quieres primero, desde dinero y cuentas hasta casa y correo en papel, y escribes las reglas que sigue cada uno.</p></li><li class="day d5"><p class="ds-overline">Viernes</p><h3>Enséñales tus reglas</h3><p>Agentes de salud, trabajo y viajes, y luego caminatas uno a uno con el grupo. En la noche de demostraciones cada quien muestra un agente en dos minutos.</p></li><li class="day d6"><p class="ds-overline">Sábado</p><h3>A casa con todo funcionando</h3><p>Tu primera revisión semanal, en grupo, y un plan de 90 días. Una última revisión de seguridad y el traslado al aeropuerto. El chat del grupo sigue abierto después.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="people">
+    <div class="ds-container">
+      <div class="head">
+        <p class="ds-overline">La gente</p>
+        <h2>Conoce a profesionales de todo el mundo</h2>
+        <p class="ds-variant lede">Altura es un grupo pequeño de profesionales de distintos países y áreas, cada uno armando su propio Should. La semana está pensada para que los conozcas.</p>
+      </div>
+      <ul class="points cols four">
+        <li><span class="ico" aria-hidden="true">public</span><div><h3>Un grupo pequeño e internacional</h3><p>Personas de distintos países, industrias y etapas de la vida, un grupo tan pequeño que para el martes todos se conocen.</p></div></li><li><span class="ico" aria-hidden="true">restaurant</span><div><h3>Cenas largas e intercambio de problemas</h3><p>Las noches son para cenas en mesa larga y para intercambiar problemas con gente que los resuelve distinto que tú.</p></div></li><li><span class="ico" aria-hidden="true">directions_walk</span><div><h3>Caminatas uno a uno</h3><p>Las caminatas del viernes al mediodía te juntan con alguien nuevo, entre los cafetales.</p></div></li><li><span class="ico" aria-hidden="true">forum</span><div><h3>Una red que dura</h3><p>El chat del grupo sigue abierto después de la semana, así que sigues comparando ideas y configuraciones desde casa.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="place">
+    <div class="ds-container">
+      <div class="head">
+        <p class="ds-overline">El lugar</p>
+        <h2>El Valle Central de Costa Rica</h2>
+        <p class="ds-variant lede">Cafetales sobre el valle, días cálidos y noches frescas, cerca del aeropuerto.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Sobre el nivel del mar</dt><dd>950 m</dd></div><div><dt>De día, de diciembre a abril</dt><dd>20–28 °C</dd></div><div><dt>Del aeropuerto de San José</dt><dd>25 min</dd></div><div><dt>Fácil para llamar a casa</dt><dd>UTC−6</dd></div>
+      </dl>
+      <div class="photos">
+        <figure class="p0"><img src="../img/pool.jpg" alt="Piscina infinita bordeada de buganvilias rojas en el Valle Central de Costa Rica" loading="lazy"><figcaption>Una pequeña propiedad en la ladera, con piscina y jardines</figcaption></figure><figure class="p1"><img src="../img/coffee-hills.jpg" alt="Cafetales verdes que bajan hacia el Valle Central de Costa Rica, con montañas azules al fondo" loading="lazy"><figcaption>Cafetales sobre el valle</figcaption></figure><figure class="p2"><img src="../img/poas.jpg" alt="La laguna turquesa del cráter del volcán Poás" loading="lazy"><figcaption>El cráter del Poás, el miércoles al amanecer</figcaption></figure><figure class="p3"><img src="../img/waterfall.jpg" alt="Una catarata alta en el bosque lluvioso cerca de La Paz" loading="lazy"><figcaption>Cataratas cerca de La Paz</figcaption></figure>
+      </div>
+      <p class="small">Las fotos muestran la región, no un lugar reservado.</p>
+    </div>
+  </section>
+
+  <section class="band" id="bring">
+    <div class="ds-container">
+      <div class="head">
+        <p class="ds-overline">Qué traer</p>
+        <h2>Tres cosas y tus accesos</h2>
+      </div>
+      <ul class="points cols four">
+        <li><span class="ico" aria-hidden="true">laptop_mac</span><div><h3>Una computadora portátil</h3><p>Mac o Windows, con espacio para instalar Claude Code y un gestor de contraseñas.</p></div></li><li><span class="ico" aria-hidden="true">key</span><div><h3>Tu propia cuenta de Claude</h3><p>Pro o Max, que incluyen Claude Code. Es tuya y te la quedas después de la semana.</p></div></li><li><span class="ico" aria-hidden="true">smartphone</span><div><h3>Tu teléfono</h3><p>Tu Should te escribe, y tú respondes desde ahí.</p></div></li><li><span class="ico" aria-hidden="true">checklist</span><div><h3>Accesos a mano</h3><p>Tus inicios de sesión del correo, el banco y la app de pendientes, y tu teléfono para los códigos de verificación. Te mandamos una lista corta antes del viaje.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="ds-container narrow">
+      <div class="head">
+        <p class="ds-overline">Preguntas</p>
+        <h2>Antes de anotarte</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Necesito saber programar?</summary><p>No. Le escribes a Claude en palabras sencillas, y hacemos la configuración contigo, paso a paso.</p></details><details><summary>¿Estoy comprando Should?</summary><p>No. Should es un prototipo que funciona. En Altura configuras tu propia copia del mismo enfoque en tu computadora y tus cuentas, y nada tuyo corre de nuestro lado.</p></details><details><summary>¿Cuánto cuesta?</summary><p>Aún no hay fechas ni precio; la lista piloto nos ayuda a definirlos. Tu plan de Claude es aparte y se le paga a Anthropic.</p></details><details><summary>¿Quién más va a estar?</summary><p>Un grupo pequeño de profesionales de distintos países y áreas. La lista piloto nos ayuda a formar el grupo, y sabrás quién viene antes de viajar.</p></details><details><summary>Uso ChatGPT. ¿Puedo ir igual?</summary><p>Should está hecho hoy sobre Claude y Claude Code, así que para la semana necesitas una cuenta Claude Pro o Max.</p></details><details><summary>¿Puedo verlo antes?</summary><p>Sí. La demostración pública muestra el tablero con datos inventados, y la página de Should explica cómo funciona.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="ds-container join">
+      <div class="join-intro">
+        <p class="ds-overline">Grupo piloto</p>
+        <h2>Únete a la lista piloto</h2>
+        <p class="ds-variant">Estamos planeando un piloto pequeño. Cuéntanos de ti y qué te gustaría que Should te quitara de encima, y con las respuestas definimos fechas y precio. Anotarte no te compromete a nada.</p>
+        <h3 class="inc-title">Planeado para el piloto</h3>
+        <ul class="included">
+          <li><span>Seis noches de hospedaje</span><span>Incluido</span></li><li><span>La mayoría de las comidas</span><span>Incluido</span></li><li><span>Talleres, ayuda con la configuración, paseos</span><span>Incluido</span></li><li><span>Traslados al aeropuerto</span><span>Incluido</span></li><li><span>Vuelos y tu plan de Claude</span><span>No incluido</span></li>
+        </ul>
+      </div>
+      <div class="ds-card outlined form-card">
+        <form id="signup" novalidate data-sending="Enviando…" data-need-name="Primero escribe tu nombre y tu correo." data-bad-email="Ese correo no parece correcto." data-failed="No se pudo enviar. Inténtalo de nuevo o usa el enlace de Google Forms de arriba.">
+          <p class="small alt-link">¿Prefieres un formulario normal? <a href="https://docs.google.com/forms/d/1fXPf_z4kVkfukXg2xg78lBzH7sfH8WV1RGz1lqXXSQc/viewform" rel="noopener">Anótate en Google Forms</a>. Las mismas preguntas, en inglés, sin crear cuenta.</p>
+          <div class="row2">
+            <label class="ds-field"><span class="ds-field-label">Nombre</span><input class="ds-input" id="f-name" name="name" type="text" autocomplete="name" required></label>
+            <label class="ds-field"><span class="ds-field-label">Correo</span><input class="ds-input" id="f-email" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label class="ds-field"><span class="ds-field-label">A qué te dedicas</span><input class="ds-input" id="f-role" name="role" type="text" placeholder="Enfermera, dueño de un negocio, ingeniera…" autocomplete="organization-title"></label>
+          <fieldset class="agents">
+            <legend class="ds-field-label">¿Qué agentes quisieras primero?</legend>
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="goals" value="Chief of staff"><span>Jefe de gabinete: mensaje de la mañana, correo, calendario</span></label><label class="check"><input type="checkbox" name="goals" value="Financial advisor"><span>Dinero: cuentas, presupuesto, crédito</span></label><label class="check"><input type="checkbox" name="goals" value="Tax guy"><span>Impuestos y papeleo</span></label><label class="check"><input type="checkbox" name="goals" value="Retirement planner"><span>Jubilación y ahorros</span></label><label class="check"><input type="checkbox" name="goals" value="Nutrition specialist"><span>Comidas y supermercado</span></label><label class="check"><input type="checkbox" name="goals" value="Personal trainer"><span>Ejercicio y salud</span></label><label class="check"><input type="checkbox" name="goals" value="House manager"><span>Casa, auto y renovaciones</span></label><label class="check"><input type="checkbox" name="goals" value="Career coach"><span>Trabajo y ofertas de empleo</span></label><label class="check"><input type="checkbox" name="goals" value="Travel agent"><span>Viajes y tarifas</span></label><label class="check"><input type="checkbox" name="goals" value="Receptionist"><span>Mensajes y llamadas, con tu sí</span></label><label class="check"><input type="checkbox" name="goals" value="Mail clerk"><span>Correo en papel</span></label>
+            </div>
+          </fieldset>
+          <label class="ds-field"><span class="ds-field-label">¿Qué cuenta de IA tienes?</span>
+            <select class="ds-select" id="f-ai" name="ai"><option value="">Elige una opción</option><option value="Claude Pro or Max">Claude Pro o Max</option><option value="Claude (free)">Claude (gratis)</option><option value="ChatGPT / OpenAI">ChatGPT / OpenAI</option><option value="Both Claude and ChatGPT">Claude y ChatGPT</option><option value="None yet">Ninguna todavía</option></select>
+            <span class="ds-supporting">Para la semana necesitas Claude Pro o Max, una computadora portátil y tu teléfono.</span></label>
+          <div class="row2">
+            <label class="ds-field"><span class="ds-field-label">El mejor mes para ti</span>
+              <select class="ds-select" id="f-month" name="month"><option value="">Elige una opción</option><option value="Feb 2027">Febrero de 2027</option><option value="Mar 2027">Marzo de 2027</option><option value="Apr 2027">Abril de 2027</option><option value="May 2027">Mayo de 2027</option><option value="Any of these">Cualquiera de esos</option></select></label>
+            <label class="ds-field"><span class="ds-field-label">Un precio justo por la semana</span>
+              <select class="ds-select" id="f-price" name="price"><option value="">Elige una opción</option><option value="Under $2,000">Menos de $2,000</option><option value="$2,000–$3,000">$2,000–$3,000</option><option value="$3,000–$4,500">$3,000–$4,500</option><option value="Over $4,500">Más de $4,500</option><option value="Employer would pay">Lo pagaría mi empleador</option></select>
+              <span class="ds-supporting">Por persona, con hospedaje, sin vuelos. En dólares.</span></label>
+          </div>
+          <label class="ds-field"><span class="ds-field-label">Algo más <span class="opt">(opcional)</span></span><textarea class="ds-textarea" id="f-note" name="note" rows="3" placeholder="¿Qué te gustaría que Should hiciera por ti primero?"></textarea></label>
+          <div class="ds-row submit-row">
+            <button class="ds-btn lg" id="f-submit" type="submit">Anótame en la lista</button>
+          </div>
+          <p class="status" id="f-status" role="status" aria-live="polite"></p>
+          <p class="small">Tus respuestas solo le llegan al organizador, por Google Forms.</p>
+        </form>
+        <div class="done" id="done" hidden tabindex="-1">
+          <p class="ds-overline">Ya estás en la lista</p>
+          <h3>Gracias.</h3>
+          <p>Te escribiremos cuando estén las fechas del piloto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="ds-container foot-grid">
+    <div>
+      <span class="mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 41 24 7 41 41"/><path d="M13 29h22"/><path class="sun" d="M17.5 29a6.5 6.5 0 0 1 13 0z"/></svg><span>Altura</span></span>
+      <p class="small">Un retiro para reiniciar tu vida · Costa Rica</p>
+    </div>
+    <div>
+      <p class="small">Altura es un retiro planeado, y Should es un prototipo que funciona. El itinerario, los detalles del lugar y lo incluido son un borrador para el piloto y van a cambiar.</p>
+      <p class="small credits">Fotos de Wikimedia Commons y Flickr: atardecer en Grecia (portada), Rodtico21 (CC BY-SA 4.0); cafetales, DoNotLick (CC BY 2.0); piscina, s9-4pr (CC BY 2.0); catarata de La Paz, Federico Mata (CC BY 3.0); cráter del Poás, Peter Andersen (CC BY 2.5). Capturas de Should de la demostración pública, con datos inventados.</p>
+    </div>
+  </div>
+</footer>
+<script src="../home.js" defer></script>
+</body>
+</html>

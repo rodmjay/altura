@@ -1,0 +1,502 @@
+{
+  "meta": {
+    "title": "Altura · Leave Costa Rica with your own Should",
+    "description": "Altura is a life reset retreat in Costa Rica's Central Valley. In one week you set up your own Should, a team of AI agents that runs the admin of your life, on your own laptop and around your own goals.",
+    "ogLocale": "en_US"
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "home": "Altura, back to top",
+    "label": "Sections",
+    "should": "Should",
+    "week": "The week",
+    "bring": "What to bring",
+    "join": "Join the pilot list",
+    "language": "Language",
+    "people": "The people"
+  },
+  "hero": {
+    "eyebrow": "Altura · a life reset retreat · Costa Rica",
+    "title": "Come for a week. Leave with your own Should.",
+    "body": "Should is a team of AI agents that runs the admin of your life: email, calendar, to-dos, bills and goals. At Altura you spend a week in Costa Rica's Central Valley setting up your own, on your own laptop, alongside professionals from around the world. You fly home with it running, and with a network that lasts.",
+    "cta": "Join the pilot list",
+    "ctaSecondary": "See what Should does",
+    "status": "Pilot cohort. Dates and price aren't set yet, and signing up commits you to nothing.",
+    "imgAlt": "Sunset breaking through clouds over the hills of Grecia, in Costa Rica's Central Valley"
+  },
+  "should": {
+    "eyebrow": "What you take home",
+    "title": "What Should does all day",
+    "body": "Should already runs one person's life, every day. It handles the small stuff on its own and brings you only the decisions that are really yours.",
+    "points": [
+      {
+        "icon": "sms",
+        "title": "One morning text",
+        "body": "At 8 AM: the three things that matter today, what you're waiting on, and anything that needs you. Nothing else."
+      },
+      {
+        "icon": "groups",
+        "title": "An agent team for the small stuff",
+        "body": "Agents for money, home, health, career and travel sort the inbox, track bills, file the paperwork and watch prices, so you don't have to remember."
+      },
+      {
+        "icon": "touch_app",
+        "title": "Only the real decisions reach you",
+        "body": "Anything that spends money, sends a message to someone or can't be undone waits for your yes. You answer with 1, 2 or 3 from your phone."
+      },
+      {
+        "icon": "dashboard",
+        "title": "A dashboard for everything",
+        "body": "Every agent has a desk on a private dashboard for your laptop and phone, with your projects and goals beside them. It can show on the TV at home too."
+      },
+      {
+        "icon": "explore",
+        "title": "It starts from your values",
+        "body": "Your values and goals decide the small calls. A weekly sit-down keeps them current and turns the week into at most three commitments."
+      }
+    ],
+    "demoLink": "Walk around the demo",
+    "pageLink": "Read about Should"
+  },
+  "day": {
+    "eyebrow": "A morning with Should",
+    "title": "You answer with a number and get on with your day",
+    "body": "No app to open and nothing to check. Should texts you one thing at a time.",
+    "label": "Example text conversation",
+    "texts": [
+      {
+        "who": "in",
+        "text": "Good morning. Today: dentist at 10:30, call Dana back, and the car registration is done. Waiting on: the landlord about the bathroom fan."
+      },
+      {
+        "who": "in",
+        "text": "One decision: your gym renews at $39 a month on the 1st. 1 renew, 2 switch to the $25 plan, 3 ask me Friday."
+      },
+      {
+        "who": "out",
+        "text": "2"
+      },
+      {
+        "who": "in",
+        "text": "Done. The $25 plan starts Dec 1, and it's on your list for Friday's review."
+      }
+    ],
+    "note": "A made-up example."
+  },
+  "shots": {
+    "eyebrow": "See it for yourself",
+    "title": "The dashboard your agents keep current",
+    "body": "These come from the public Should demo. Every name, number and account in them is made up.",
+    "items": [
+      {
+        "src": "img/should/today.png",
+        "w": "1280",
+        "h": "860",
+        "alt": "Should's Today page: a short summary of the day, tiles for tasks, checking, bills, steps and credit score, today's to-dos and the calendar",
+        "caption": "Today: the day in two sentences, your three things, the calendar and what agents are waiting on."
+      },
+      {
+        "src": "img/should/projects.png",
+        "w": "1280",
+        "h": "860",
+        "alt": "Should's Projects page: four projects in motion, the next date, your next steps, and a trip card with the one step that's yours",
+        "caption": "Projects: every outcome that takes more than one step, with the one next step that's yours."
+      },
+      {
+        "src": "img/should/desk.png",
+        "w": "1280",
+        "h": "860",
+        "alt": "The Executive Assistant's desk in Should: its latest report, the routines it runs, and what it never does",
+        "caption": "An agent's desk: what it did today, what it runs, and what it never does without your yes."
+      }
+    ],
+    "phoneAlt": "Should's Today page on a phone",
+    "demoNote": "From the public demo, with made-up data."
+  },
+  "stage": {
+    "eyebrow": "Where it is today",
+    "title": "Honest about what this is",
+    "items": [
+      {
+        "title": "A working prototype",
+        "body": "Should runs its builder's life every day. It isn't a finished app you download, and it changes every week."
+      },
+      {
+        "title": "Set up by hand, with you",
+        "body": "At Altura we build your copy together, step by step, around your accounts and your rules. Expect a few rough edges."
+      },
+      {
+        "title": "No promised outcomes",
+        "body": "It can take a lot of small work off your plate. It won't fix your money, health or career for you, and we don't promise income or results."
+      }
+    ]
+  },
+  "yours": {
+    "eyebrow": "Your data",
+    "title": "Your life stays on your machine",
+    "points": [
+      {
+        "icon": "laptop_mac",
+        "title": "On your own laptop",
+        "body": "Your Should runs on your machine, with your own Claude account. Altura never holds your data."
+      },
+      {
+        "icon": "link",
+        "title": "Your accounts, your access",
+        "body": "You connect the email, calendar and to-do apps you already use, and you choose what each agent may read."
+      },
+      {
+        "icon": "rule",
+        "title": "Rules you write",
+        "body": "Agents ask before money, messages to other people, deletes and settings. You decide what else they ask about."
+      }
+    ]
+  },
+  "week": {
+    "eyebrow": "The week",
+    "title": "From what matters to you, to it running",
+    "body": "Mornings are for building, afternoons are for the valley. A draft plan for the pilot, so details will change.",
+    "days": [
+      {
+        "day": "Sunday",
+        "title": "Arrive",
+        "body": "Pickup at the San José airport, the pool and gardens, a welcome dinner. A quick laptop check so everyone starts ready."
+      },
+      {
+        "day": "Monday",
+        "title": "Values and goals",
+        "body": "A sit-down on what matters to you: your values, a few goals for the year, and what good looks like in each part of life. Then we lock down your accounts with a password manager, two-factor sign-in and a credit freeze. Dinner ends with a problem swap."
+      },
+      {
+        "day": "Tuesday",
+        "title": "Connect your accounts",
+        "body": "Claude Code in plain words, then your email, calendar and to-dos connected. The inbox gets cleaned up, everything goes into one list, and your morning text is scheduled."
+      },
+      {
+        "day": "Wednesday",
+        "title": "Rest",
+        "body": "Poás volcano at sunrise, hot springs or a slow day. Your first morning text arrives wherever you are."
+      },
+      {
+        "day": "Thursday",
+        "title": "Choose your agents",
+        "body": "Pick the agents you want first, from money and bills to home and paper mail, and write the rules each one follows."
+      },
+      {
+        "day": "Friday",
+        "title": "Teach them your rules",
+        "body": "Health, career and travel agents, then one-on-one walks with the group. At demo night everyone shows one agent in two minutes."
+      },
+      {
+        "day": "Saturday",
+        "title": "Go home with it running",
+        "body": "Your first weekly review, together, and a 90-day plan. A last security check, then the shuttle to the airport. The cohort chat stays open after you leave."
+      }
+    ]
+  },
+  "place": {
+    "eyebrow": "The place",
+    "title": "Costa Rica's Central Valley",
+    "body": "Coffee hills above the valley, warm days and cool nights, close to the airport.",
+    "facts": [
+      {
+        "v": "950 m",
+        "k": "Above sea level"
+      },
+      {
+        "v": "20–28°C",
+        "k": "Daytime, December to April"
+      },
+      {
+        "v": "25 min",
+        "k": "From the San José airport"
+      },
+      {
+        "v": "UTC−6",
+        "k": "An easy call home"
+      }
+    ],
+    "photos": [
+      {
+        "src": "img/pool.jpg",
+        "alt": "Infinity pool edged with red bougainvillea in Costa Rica's Central Valley",
+        "caption": "A small hillside property with a pool and gardens"
+      },
+      {
+        "src": "img/coffee-hills.jpg",
+        "alt": "Green coffee hills rolling down to Costa Rica's Central Valley, with blue mountains beyond",
+        "caption": "Coffee hills above the valley"
+      },
+      {
+        "src": "img/poas.jpg",
+        "alt": "The turquoise crater lake of Poás volcano",
+        "caption": "Poás crater, Wednesday at sunrise"
+      },
+      {
+        "src": "img/waterfall.jpg",
+        "alt": "A tall waterfall in green rainforest near La Paz",
+        "caption": "Waterfalls near La Paz"
+      }
+    ],
+    "note": "Photos show the region, not a booked venue."
+  },
+  "bring": {
+    "eyebrow": "What to bring",
+    "title": "Three things, and your logins",
+    "items": [
+      {
+        "icon": "laptop_mac",
+        "title": "A laptop",
+        "body": "Mac or Windows, with room to install Claude Code and a password manager."
+      },
+      {
+        "icon": "key",
+        "title": "Your own Claude account",
+        "body": "Pro or Max, which includes Claude Code. It's yours, and you keep it after the week."
+      },
+      {
+        "icon": "smartphone",
+        "title": "Your phone",
+        "body": "Your Should texts you, and you answer from it."
+      },
+      {
+        "icon": "checklist",
+        "title": "Logins you can reach",
+        "body": "Sign-ins for your email, bank and to-do app, and your phone for two-factor codes. We send a short checklist before you fly."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Before you sign up",
+    "items": [
+      {
+        "q": "Do I need to know how to code?",
+        "a": "No. You type plain requests to Claude, and we do the setup with you, step by step."
+      },
+      {
+        "q": "Am I buying Should?",
+        "a": "No. Should is a working prototype. At Altura you set up your own copy of the same approach on your own laptop and accounts, and nothing of yours runs on our side."
+      },
+      {
+        "q": "What does it cost?",
+        "a": "Dates and price aren't set yet; the pilot list helps us set them. Your Claude plan is separate and paid to Anthropic."
+      },
+      {
+        "q": "Who else will be there?",
+        "a": "A small group of professionals from different countries and fields. The pilot list helps us shape the group, and you'll know who's coming before you fly."
+      },
+      {
+        "q": "I use ChatGPT. Can I still come?",
+        "a": "Should is built on Claude and Claude Code today, so you'll need a Claude Pro or Max account for the week."
+      },
+      {
+        "q": "Can I see it first?",
+        "a": "Yes. The public demo shows the dashboard with made-up data, and the Should page explains how it works."
+      }
+    ]
+  },
+  "join": {
+    "eyebrow": "Pilot cohort",
+    "title": "Join the pilot list",
+    "body": "We're planning one small pilot. Tell us about yourself and what you'd want Should to take off your plate, and we'll set dates and price from the answers. Signing up commits you to nothing.",
+    "includedTitle": "Planned for the pilot",
+    "included": [
+      {
+        "k": "Six nights' lodging",
+        "v": "Included"
+      },
+      {
+        "k": "Most meals",
+        "v": "Included"
+      },
+      {
+        "k": "Workshops, setup help, excursions",
+        "v": "Included"
+      },
+      {
+        "k": "Airport transfers",
+        "v": "Included"
+      },
+      {
+        "k": "Flights and your Claude plan",
+        "v": "Not included"
+      }
+    ],
+    "altLink": "Prefer a regular form?",
+    "altLinkText": "Sign up on Google Forms",
+    "altLinkTail": "Same questions, no account needed.",
+    "name": "Name",
+    "email": "Email",
+    "role": "What you do",
+    "rolePlaceholder": "Nurse, small-business owner, engineer…",
+    "agents": "Which agents would you want first?",
+    "agentOptions": [
+      {
+        "value": "Chief of staff",
+        "label": "Chief of staff: morning text, inbox, calendar"
+      },
+      {
+        "value": "Financial advisor",
+        "label": "Money: bills, budget, credit"
+      },
+      {
+        "value": "Tax guy",
+        "label": "Taxes and paperwork"
+      },
+      {
+        "value": "Retirement planner",
+        "label": "Retirement and savings"
+      },
+      {
+        "value": "Nutrition specialist",
+        "label": "Meals and groceries"
+      },
+      {
+        "value": "Personal trainer",
+        "label": "Workouts and health"
+      },
+      {
+        "value": "House manager",
+        "label": "Home, car and renewals"
+      },
+      {
+        "value": "Career coach",
+        "label": "Career and job leads"
+      },
+      {
+        "value": "Travel agent",
+        "label": "Travel and fares"
+      },
+      {
+        "value": "Receptionist",
+        "label": "Texts and calls, with your yes"
+      },
+      {
+        "value": "Mail clerk",
+        "label": "Paper mail"
+      }
+    ],
+    "ai": "Which AI account do you have?",
+    "aiOptions": [
+      {
+        "value": "Claude Pro or Max",
+        "label": "Claude Pro or Max"
+      },
+      {
+        "value": "Claude (free)",
+        "label": "Claude (free)"
+      },
+      {
+        "value": "ChatGPT / OpenAI",
+        "label": "ChatGPT / OpenAI"
+      },
+      {
+        "value": "Both Claude and ChatGPT",
+        "label": "Both Claude and ChatGPT"
+      },
+      {
+        "value": "None yet",
+        "label": "None yet"
+      }
+    ],
+    "aiHint": "For the week you'll need Claude Pro or Max, a laptop and your phone.",
+    "month": "Best month for you",
+    "monthOptions": [
+      {
+        "value": "Feb 2027",
+        "label": "February 2027"
+      },
+      {
+        "value": "Mar 2027",
+        "label": "March 2027"
+      },
+      {
+        "value": "Apr 2027",
+        "label": "April 2027"
+      },
+      {
+        "value": "May 2027",
+        "label": "May 2027"
+      },
+      {
+        "value": "Any of these",
+        "label": "Any of these"
+      }
+    ],
+    "price": "A fair price for the week",
+    "priceOptions": [
+      {
+        "value": "Under $2,000",
+        "label": "Under $2,000"
+      },
+      {
+        "value": "$2,000–$3,000",
+        "label": "$2,000–$3,000"
+      },
+      {
+        "value": "$3,000–$4,500",
+        "label": "$3,000–$4,500"
+      },
+      {
+        "value": "Over $4,500",
+        "label": "Over $4,500"
+      },
+      {
+        "value": "Employer would pay",
+        "label": "My employer would pay"
+      }
+    ],
+    "priceHint": "Per person, lodging included, before flights.",
+    "note": "Anything else",
+    "optional": "(optional)",
+    "notePlaceholder": "What would you most like Should to handle for you?",
+    "submit": "Add me to the list",
+    "sending": "Sending…",
+    "needName": "Add your name and email first.",
+    "badEmail": "That email doesn't look right.",
+    "failed": "That didn't go through. Try again, or use the Google Form link above.",
+    "doneEyebrow": "You're on the list",
+    "doneTitle": "Thank you.",
+    "doneBody": "We'll email you when the pilot dates are set.",
+    "privacy": "Your answers go only to the organizer, through Google Forms.",
+    "choose": "Choose one"
+  },
+  "foot": {
+    "tagline": "A life reset retreat · Costa Rica",
+    "disclaimer": "Altura is a planned retreat, and Should is a working prototype. The itinerary, place details and inclusions are a draft for the pilot and will change.",
+    "credits": "Photos via Wikimedia Commons and Flickr: Grecia sunset (hero), Rodtico21 (CC BY-SA 4.0); coffee hills, DoNotLick (CC BY 2.0); pool, s9-4pr (CC BY 2.0); La Paz waterfall, Federico Mata (CC BY 3.0); Poás crater, Peter Andersen (CC BY 2.5). Should screenshots from the public demo, with made-up data."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "That page isn't here.",
+    "cta": "Go to Altura"
+  },
+  "people": {
+    "eyebrow": "The people",
+    "title": "Meet professionals from around the world",
+    "body": "Altura is a small group of professionals from different countries and fields, each building their own Should. The week is built so you get to know them.",
+    "items": [
+      {
+        "icon": "public",
+        "title": "A small, international group",
+        "body": "People from different countries, industries and stages of life, small enough that everyone knows everyone by Tuesday."
+      },
+      {
+        "icon": "restaurant",
+        "title": "Long dinners and problem swaps",
+        "body": "Evenings are for long-table dinners and swapping problems with people who solve them differently than you do."
+      },
+      {
+        "icon": "directions_walk",
+        "title": "One-on-one walks",
+        "body": "Friday's midday walks pair you with someone new, through the coffee hills."
+      },
+      {
+        "icon": "forum",
+        "title": "A network that lasts",
+        "body": "The cohort chat stays open after the week, so you keep comparing notes, setups and ideas from home."
+      }
+    ]
+  }
+}

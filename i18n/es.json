@@ -1,0 +1,502 @@
+{
+  "meta": {
+    "title": "Altura · Vete de Costa Rica con tu propio Should",
+    "description": "Altura es un retiro para reiniciar tu vida en el Valle Central de Costa Rica. En una semana configuras tu propio Should, un equipo de agentes de IA que se encarga de la administración de tu vida, en tu propia computadora y alrededor de tus metas.",
+    "ogLocale": "es_419"
+  },
+  "nav": {
+    "skip": "Ir al contenido",
+    "home": "Altura, volver arriba",
+    "label": "Secciones",
+    "should": "Should",
+    "week": "La semana",
+    "bring": "Qué traer",
+    "join": "Únete a la lista piloto",
+    "language": "Idioma",
+    "people": "La gente"
+  },
+  "hero": {
+    "eyebrow": "Altura · un retiro para reiniciar tu vida · Costa Rica",
+    "title": "Ven por una semana. Vete con tu propio Should.",
+    "body": "Should es un equipo de agentes de IA que se encarga de la administración de tu vida: correo, calendario, pendientes, cuentas y metas. En Altura pasas una semana en el Valle Central de Costa Rica configurando el tuyo, en tu propia computadora, junto a profesionales de todo el mundo. Regresas a casa con él funcionando y con una red de contactos que dura.",
+    "cta": "Únete a la lista piloto",
+    "ctaSecondary": "Mira lo que hace Should",
+    "status": "Grupo piloto. Aún no hay fechas ni precio, y anotarte no te compromete a nada.",
+    "imgAlt": "Atardecer entre las nubes sobre las colinas de Grecia, en el Valle Central de Costa Rica"
+  },
+  "should": {
+    "eyebrow": "Lo que te llevas a casa",
+    "title": "Lo que Should hace todo el día",
+    "body": "Should ya maneja la vida de una persona, todos los días. Resuelve lo pequeño por su cuenta y solo te trae las decisiones que de verdad son tuyas.",
+    "points": [
+      {
+        "icon": "sms",
+        "title": "Un mensaje cada mañana",
+        "body": "A las 8 AM: las tres cosas que importan hoy, lo que estás esperando y lo que necesita de ti. Nada más."
+      },
+      {
+        "icon": "groups",
+        "title": "Un equipo de agentes para lo pequeño",
+        "body": "Agentes de dinero, casa, salud, trabajo y viajes ordenan el correo, siguen las cuentas, archivan el papeleo y vigilan precios, para que no tengas que acordarte."
+      },
+      {
+        "icon": "touch_app",
+        "title": "Solo te llegan las decisiones reales",
+        "body": "Todo lo que gasta dinero, le escribe a alguien o no se puede deshacer espera tu sí. Respondes con 1, 2 o 3 desde tu teléfono."
+      },
+      {
+        "icon": "dashboard",
+        "title": "Un tablero para todo",
+        "body": "Cada agente tiene su escritorio en un tablero privado para tu computadora y tu teléfono, junto a tus proyectos y metas. También puede verse en la tele de tu casa."
+      },
+      {
+        "icon": "explore",
+        "title": "Empieza por tus valores",
+        "body": "Tus valores y metas deciden lo pequeño. Una sesión semanal los mantiene al día y convierte la semana en tres compromisos como máximo."
+      }
+    ],
+    "demoLink": "Recorre la demostración",
+    "pageLink": "Lee sobre Should"
+  },
+  "day": {
+    "eyebrow": "Una mañana con Should",
+    "title": "Respondes con un número y sigues con tu día",
+    "body": "No hay que abrir una app ni revisar nada. Should te escribe una cosa a la vez.",
+    "label": "Ejemplo de conversación por mensaje",
+    "texts": [
+      {
+        "who": "in",
+        "text": "Buenos días. Hoy: dentista a las 10:30, llamar a Dana, y la renovación del registro del auto ya está lista. Esperando: al casero por el extractor del baño."
+      },
+      {
+        "who": "in",
+        "text": "Una decisión: tu gimnasio se renueva a $39 al mes el día 1. 1 renovar, 2 cambiar al plan de $25, 3 pregúntame el viernes."
+      },
+      {
+        "who": "out",
+        "text": "2"
+      },
+      {
+        "who": "in",
+        "text": "Listo. El plan de $25 empieza el 1 de diciembre y quedó en tu lista para la revisión del viernes."
+      }
+    ],
+    "note": "Un ejemplo inventado."
+  },
+  "shots": {
+    "eyebrow": "Míralo tú mismo",
+    "title": "El tablero que tus agentes mantienen al día",
+    "body": "Estas imágenes vienen de la demostración pública de Should, que está en inglés. Todos los nombres, cifras y cuentas son inventados.",
+    "items": [
+      {
+        "src": "img/should/today.png",
+        "w": "1280",
+        "h": "860",
+        "alt": "La página Hoy de Should: un resumen corto del día, tarjetas de pendientes, cuenta corriente, cuentas por pagar, pasos y puntaje de crédito, los pendientes de hoy y el calendario",
+        "caption": "Hoy: el día en dos frases, tus tres cosas, el calendario y lo que los agentes están esperando."
+      },
+      {
+        "src": "img/should/projects.png",
+        "w": "1280",
+        "h": "860",
+        "alt": "La página Proyectos de Should: cuatro proyectos en marcha, la próxima fecha, tus próximos pasos y la tarjeta de un viaje con el único paso que te toca",
+        "caption": "Proyectos: cada resultado que lleva más de un paso, con el único siguiente paso que te toca."
+      },
+      {
+        "src": "img/should/desk.png",
+        "w": "1280",
+        "h": "860",
+        "alt": "El escritorio del Asistente Ejecutivo en Should: su último reporte, las rutinas que corre y lo que nunca hace",
+        "caption": "El escritorio de un agente: lo que hizo hoy, lo que corre y lo que nunca hace sin tu sí."
+      }
+    ],
+    "phoneAlt": "La página Hoy de Should en un teléfono",
+    "demoNote": "De la demostración pública, con datos inventados."
+  },
+  "stage": {
+    "eyebrow": "Dónde está hoy",
+    "title": "Claros sobre lo que es",
+    "items": [
+      {
+        "title": "Un prototipo que funciona",
+        "body": "Should maneja la vida de quien lo construyó, todos los días. No es una app terminada que se descarga, y cambia cada semana."
+      },
+      {
+        "title": "Se configura a mano, contigo",
+        "body": "En Altura armamos tu copia juntos, paso a paso, con tus cuentas y tus reglas. Habrá algunos detalles por pulir."
+      },
+      {
+        "title": "Sin resultados prometidos",
+        "body": "Puede quitarte mucho trabajo pequeño de encima. No va a arreglar tu dinero, tu salud ni tu carrera por ti, y no prometemos ingresos ni resultados."
+      }
+    ]
+  },
+  "yours": {
+    "eyebrow": "Tus datos",
+    "title": "Tu vida se queda en tu computadora",
+    "points": [
+      {
+        "icon": "laptop_mac",
+        "title": "En tu propia computadora",
+        "body": "Tu Should corre en tu máquina, con tu propia cuenta de Claude. Altura nunca guarda tus datos."
+      },
+      {
+        "icon": "link",
+        "title": "Tus cuentas, tu acceso",
+        "body": "Conectas el correo, el calendario y la app de pendientes que ya usas, y eliges qué puede leer cada agente."
+      },
+      {
+        "icon": "rule",
+        "title": "Reglas que escribes tú",
+        "body": "Los agentes preguntan antes de dinero, mensajes a otras personas, borrados y configuraciones. Tú decides qué más deben preguntar."
+      }
+    ]
+  },
+  "week": {
+    "eyebrow": "La semana",
+    "title": "De lo que te importa a tenerlo funcionando",
+    "body": "Las mañanas son para construir y las tardes para el valle. Es un plan borrador para el piloto, así que los detalles van a cambiar.",
+    "days": [
+      {
+        "day": "Domingo",
+        "title": "Llegada",
+        "body": "Te recogemos en el aeropuerto de San José, piscina y jardines, cena de bienvenida. Una revisión rápida de la computadora para que todos empiecen listos."
+      },
+      {
+        "day": "Lunes",
+        "title": "Valores y metas",
+        "body": "Una sesión sobre lo que te importa: tus valores, algunas metas para el año y cómo se ve lo bueno en cada parte de la vida. Después protegemos tus cuentas con un gestor de contraseñas, verificación en dos pasos y un congelamiento de crédito. La cena cierra con un intercambio de problemas."
+      },
+      {
+        "day": "Martes",
+        "title": "Conecta tus cuentas",
+        "body": "Claude Code en palabras sencillas, y luego tu correo, calendario y pendientes conectados. Se limpia la bandeja de entrada, todo queda en una sola lista y se programa tu mensaje de la mañana."
+      },
+      {
+        "day": "Miércoles",
+        "title": "Descanso",
+        "body": "El volcán Poás al amanecer, aguas termales o un día tranquilo. Tu primer mensaje de la mañana te llega donde estés."
+      },
+      {
+        "day": "Jueves",
+        "title": "Elige tus agentes",
+        "body": "Escoges los agentes que quieres primero, desde dinero y cuentas hasta casa y correo en papel, y escribes las reglas que sigue cada uno."
+      },
+      {
+        "day": "Viernes",
+        "title": "Enséñales tus reglas",
+        "body": "Agentes de salud, trabajo y viajes, y luego caminatas uno a uno con el grupo. En la noche de demostraciones cada quien muestra un agente en dos minutos."
+      },
+      {
+        "day": "Sábado",
+        "title": "A casa con todo funcionando",
+        "body": "Tu primera revisión semanal, en grupo, y un plan de 90 días. Una última revisión de seguridad y el traslado al aeropuerto. El chat del grupo sigue abierto después."
+      }
+    ]
+  },
+  "place": {
+    "eyebrow": "El lugar",
+    "title": "El Valle Central de Costa Rica",
+    "body": "Cafetales sobre el valle, días cálidos y noches frescas, cerca del aeropuerto.",
+    "facts": [
+      {
+        "v": "950 m",
+        "k": "Sobre el nivel del mar"
+      },
+      {
+        "v": "20–28 °C",
+        "k": "De día, de diciembre a abril"
+      },
+      {
+        "v": "25 min",
+        "k": "Del aeropuerto de San José"
+      },
+      {
+        "v": "UTC−6",
+        "k": "Fácil para llamar a casa"
+      }
+    ],
+    "photos": [
+      {
+        "src": "img/pool.jpg",
+        "alt": "Piscina infinita bordeada de buganvilias rojas en el Valle Central de Costa Rica",
+        "caption": "Una pequeña propiedad en la ladera, con piscina y jardines"
+      },
+      {
+        "src": "img/coffee-hills.jpg",
+        "alt": "Cafetales verdes que bajan hacia el Valle Central de Costa Rica, con montañas azules al fondo",
+        "caption": "Cafetales sobre el valle"
+      },
+      {
+        "src": "img/poas.jpg",
+        "alt": "La laguna turquesa del cráter del volcán Poás",
+        "caption": "El cráter del Poás, el miércoles al amanecer"
+      },
+      {
+        "src": "img/waterfall.jpg",
+        "alt": "Una catarata alta en el bosque lluvioso cerca de La Paz",
+        "caption": "Cataratas cerca de La Paz"
+      }
+    ],
+    "note": "Las fotos muestran la región, no un lugar reservado."
+  },
+  "bring": {
+    "eyebrow": "Qué traer",
+    "title": "Tres cosas y tus accesos",
+    "items": [
+      {
+        "icon": "laptop_mac",
+        "title": "Una computadora portátil",
+        "body": "Mac o Windows, con espacio para instalar Claude Code y un gestor de contraseñas."
+      },
+      {
+        "icon": "key",
+        "title": "Tu propia cuenta de Claude",
+        "body": "Pro o Max, que incluyen Claude Code. Es tuya y te la quedas después de la semana."
+      },
+      {
+        "icon": "smartphone",
+        "title": "Tu teléfono",
+        "body": "Tu Should te escribe, y tú respondes desde ahí."
+      },
+      {
+        "icon": "checklist",
+        "title": "Accesos a mano",
+        "body": "Tus inicios de sesión del correo, el banco y la app de pendientes, y tu teléfono para los códigos de verificación. Te mandamos una lista corta antes del viaje."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas",
+    "title": "Antes de anotarte",
+    "items": [
+      {
+        "q": "¿Necesito saber programar?",
+        "a": "No. Le escribes a Claude en palabras sencillas, y hacemos la configuración contigo, paso a paso."
+      },
+      {
+        "q": "¿Estoy comprando Should?",
+        "a": "No. Should es un prototipo que funciona. En Altura configuras tu propia copia del mismo enfoque en tu computadora y tus cuentas, y nada tuyo corre de nuestro lado."
+      },
+      {
+        "q": "¿Cuánto cuesta?",
+        "a": "Aún no hay fechas ni precio; la lista piloto nos ayuda a definirlos. Tu plan de Claude es aparte y se le paga a Anthropic."
+      },
+      {
+        "q": "¿Quién más va a estar?",
+        "a": "Un grupo pequeño de profesionales de distintos países y áreas. La lista piloto nos ayuda a formar el grupo, y sabrás quién viene antes de viajar."
+      },
+      {
+        "q": "Uso ChatGPT. ¿Puedo ir igual?",
+        "a": "Should está hecho hoy sobre Claude y Claude Code, así que para la semana necesitas una cuenta Claude Pro o Max."
+      },
+      {
+        "q": "¿Puedo verlo antes?",
+        "a": "Sí. La demostración pública muestra el tablero con datos inventados, y la página de Should explica cómo funciona."
+      }
+    ]
+  },
+  "join": {
+    "eyebrow": "Grupo piloto",
+    "title": "Únete a la lista piloto",
+    "body": "Estamos planeando un piloto pequeño. Cuéntanos de ti y qué te gustaría que Should te quitara de encima, y con las respuestas definimos fechas y precio. Anotarte no te compromete a nada.",
+    "includedTitle": "Planeado para el piloto",
+    "included": [
+      {
+        "k": "Seis noches de hospedaje",
+        "v": "Incluido"
+      },
+      {
+        "k": "La mayoría de las comidas",
+        "v": "Incluido"
+      },
+      {
+        "k": "Talleres, ayuda con la configuración, paseos",
+        "v": "Incluido"
+      },
+      {
+        "k": "Traslados al aeropuerto",
+        "v": "Incluido"
+      },
+      {
+        "k": "Vuelos y tu plan de Claude",
+        "v": "No incluido"
+      }
+    ],
+    "altLink": "¿Prefieres un formulario normal?",
+    "altLinkText": "Anótate en Google Forms",
+    "altLinkTail": "Las mismas preguntas, en inglés, sin crear cuenta.",
+    "name": "Nombre",
+    "email": "Correo",
+    "role": "A qué te dedicas",
+    "rolePlaceholder": "Enfermera, dueño de un negocio, ingeniera…",
+    "agents": "¿Qué agentes quisieras primero?",
+    "agentOptions": [
+      {
+        "value": "Chief of staff",
+        "label": "Jefe de gabinete: mensaje de la mañana, correo, calendario"
+      },
+      {
+        "value": "Financial advisor",
+        "label": "Dinero: cuentas, presupuesto, crédito"
+      },
+      {
+        "value": "Tax guy",
+        "label": "Impuestos y papeleo"
+      },
+      {
+        "value": "Retirement planner",
+        "label": "Jubilación y ahorros"
+      },
+      {
+        "value": "Nutrition specialist",
+        "label": "Comidas y supermercado"
+      },
+      {
+        "value": "Personal trainer",
+        "label": "Ejercicio y salud"
+      },
+      {
+        "value": "House manager",
+        "label": "Casa, auto y renovaciones"
+      },
+      {
+        "value": "Career coach",
+        "label": "Trabajo y ofertas de empleo"
+      },
+      {
+        "value": "Travel agent",
+        "label": "Viajes y tarifas"
+      },
+      {
+        "value": "Receptionist",
+        "label": "Mensajes y llamadas, con tu sí"
+      },
+      {
+        "value": "Mail clerk",
+        "label": "Correo en papel"
+      }
+    ],
+    "ai": "¿Qué cuenta de IA tienes?",
+    "aiOptions": [
+      {
+        "value": "Claude Pro or Max",
+        "label": "Claude Pro o Max"
+      },
+      {
+        "value": "Claude (free)",
+        "label": "Claude (gratis)"
+      },
+      {
+        "value": "ChatGPT / OpenAI",
+        "label": "ChatGPT / OpenAI"
+      },
+      {
+        "value": "Both Claude and ChatGPT",
+        "label": "Claude y ChatGPT"
+      },
+      {
+        "value": "None yet",
+        "label": "Ninguna todavía"
+      }
+    ],
+    "aiHint": "Para la semana necesitas Claude Pro o Max, una computadora portátil y tu teléfono.",
+    "month": "El mejor mes para ti",
+    "monthOptions": [
+      {
+        "value": "Feb 2027",
+        "label": "Febrero de 2027"
+      },
+      {
+        "value": "Mar 2027",
+        "label": "Marzo de 2027"
+      },
+      {
+        "value": "Apr 2027",
+        "label": "Abril de 2027"
+      },
+      {
+        "value": "May 2027",
+        "label": "Mayo de 2027"
+      },
+      {
+        "value": "Any of these",
+        "label": "Cualquiera de esos"
+      }
+    ],
+    "price": "Un precio justo por la semana",
+    "priceOptions": [
+      {
+        "value": "Under $2,000",
+        "label": "Menos de $2,000"
+      },
+      {
+        "value": "$2,000–$3,000",
+        "label": "$2,000–$3,000"
+      },
+      {
+        "value": "$3,000–$4,500",
+        "label": "$3,000–$4,500"
+      },
+      {
+        "value": "Over $4,500",
+        "label": "Más de $4,500"
+      },
+      {
+        "value": "Employer would pay",
+        "label": "Lo pagaría mi empleador"
+      }
+    ],
+    "priceHint": "Por persona, con hospedaje, sin vuelos. En dólares.",
+    "note": "Algo más",
+    "optional": "(opcional)",
+    "notePlaceholder": "¿Qué te gustaría que Should hiciera por ti primero?",
+    "submit": "Anótame en la lista",
+    "sending": "Enviando…",
+    "needName": "Primero escribe tu nombre y tu correo.",
+    "badEmail": "Ese correo no parece correcto.",
+    "failed": "No se pudo enviar. Inténtalo de nuevo o usa el enlace de Google Forms de arriba.",
+    "doneEyebrow": "Ya estás en la lista",
+    "doneTitle": "Gracias.",
+    "doneBody": "Te escribiremos cuando estén las fechas del piloto.",
+    "privacy": "Tus respuestas solo le llegan al organizador, por Google Forms.",
+    "choose": "Elige una opción"
+  },
+  "foot": {
+    "tagline": "Un retiro para reiniciar tu vida · Costa Rica",
+    "disclaimer": "Altura es un retiro planeado, y Should es un prototipo que funciona. El itinerario, los detalles del lugar y lo incluido son un borrador para el piloto y van a cambiar.",
+    "credits": "Fotos de Wikimedia Commons y Flickr: atardecer en Grecia (portada), Rodtico21 (CC BY-SA 4.0); cafetales, DoNotLick (CC BY 2.0); piscina, s9-4pr (CC BY 2.0); catarata de La Paz, Federico Mata (CC BY 3.0); cráter del Poás, Peter Andersen (CC BY 2.5). Capturas de Should de la demostración pública, con datos inventados."
+  },
+  "notFound": {
+    "title": "No encontramos esa página",
+    "body": "Esa página no está aquí.",
+    "cta": "Ir a Altura"
+  },
+  "people": {
+    "eyebrow": "La gente",
+    "title": "Conoce a profesionales de todo el mundo",
+    "body": "Altura es un grupo pequeño de profesionales de distintos países y áreas, cada uno armando su propio Should. La semana está pensada para que los conozcas.",
+    "items": [
+      {
+        "icon": "public",
+        "title": "Un grupo pequeño e internacional",
+        "body": "Personas de distintos países, industrias y etapas de la vida, un grupo tan pequeño que para el martes todos se conocen."
+      },
+      {
+        "icon": "restaurant",
+        "title": "Cenas largas e intercambio de problemas",
+        "body": "Las noches son para cenas en mesa larga y para intercambiar problemas con gente que los resuelve distinto que tú."
+      },
+      {
+        "icon": "directions_walk",
+        "title": "Caminatas uno a uno",
+        "body": "Las caminatas del viernes al mediodía te juntan con alguien nuevo, entre los cafetales."
+      },
+      {
+        "icon": "forum",
+        "title": "Una red que dura",
+        "body": "El chat del grupo sigue abierto después de la semana, así que sigues comparando ideas y configuraciones desde casa."
+      }
+    ]
+  }
+}
