@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Altura · Leave Costa Rica with your own Should",
+    "title": "Altura · The week you set up your own Should",
     "description": "Altura is a life reset retreat in Costa Rica's Central Valley. In one week you set up your own Should, a team of AI agents that runs the admin of your life, on your own laptop and around your own goals.",
     "ogLocale": "en_US"
   },
@@ -17,8 +17,8 @@
   },
   "hero": {
     "eyebrow": "Altura · a life reset retreat · Costa Rica",
-    "title": "Come for a week. Leave with your own Should.",
-    "body": "Should is a team of AI agents that runs the admin of your life: email, calendar, to-dos, bills and goals. At Altura you spend a week in Costa Rica's Central Valley setting up your own, on your own laptop, alongside professionals from around the world. You fly home with it running, and with a network that lasts.",
+    "title": "Come for a week. Set up your own Should.",
+    "body": "Should is a team of AI agents that runs the admin of your life: email, calendar, to-dos, bills and goals. Altura is the week you set up your own, on your own laptop and your own Claude account, in Costa Rica's Central Valley, alongside professionals from around the world. You go home with a setup built around your life, and a network that lasts.",
     "cta": "Join the pilot list",
     "ctaSecondary": "See what Should does",
     "status": "Pilot cohort. Dates and price aren't set yet, and signing up commits you to nothing.",
@@ -30,9 +30,9 @@
     "body": "Should already runs one person's life, every day. It handles the small stuff on its own and brings you only the decisions that are really yours.",
     "points": [
       {
-        "icon": "sms",
-        "title": "One morning text",
-        "body": "At 8 AM: the three things that matter today, what you're waiting on, and anything that needs you. Nothing else."
+        "icon": "chat",
+        "title": "One morning summary",
+        "body": "At 8 AM, in chat: the three things that matter today, what you're waiting on, and anything that needs you. By text too, once you add your own number."
       },
       {
         "icon": "groups",
@@ -42,12 +42,12 @@
       {
         "icon": "touch_app",
         "title": "Only the real decisions reach you",
-        "body": "Anything that spends money, sends a message to someone or can't be undone waits for your yes. You answer with 1, 2 or 3 from your phone."
+        "body": "Anything that spends money, sends a message to someone or can't be undone waits for your yes. You answer with 1, 2 or 3."
       },
       {
         "icon": "dashboard",
         "title": "A dashboard for everything",
-        "body": "Every agent has a desk on a private dashboard for your laptop and phone, with your projects and goals beside them. It can show on the TV at home too."
+        "body": "Every agent has a desk on a private dashboard for your laptop and phone, with your projects and goals beside them."
       },
       {
         "icon": "explore",
@@ -57,13 +57,14 @@
     ],
     "demoLink": "Walk around the demo",
     "pageLink": "Read about Should",
-    "ebookLink": "Read The Should Way"
+    "ebookLink": "Read The Should Way (PDF)",
+    "ebookFile": "ebook/should-way.en.pdf"
   },
   "day": {
     "eyebrow": "A morning with Should",
     "title": "You answer with a number and get on with your day",
-    "body": "No app to open and nothing to check. Should texts you one thing at a time.",
-    "label": "Example text conversation",
+    "body": "Nothing to dig through. Should brings you one thing at a time, in chat, or by text once you add your own number.",
+    "label": "Example conversation",
     "texts": [
       {
         "who": "in",
@@ -155,7 +156,7 @@
   },
   "week": {
     "eyebrow": "The week",
-    "title": "From what matters to you, to it running",
+    "title": "From what matters to you, to your own setup",
     "body": "Mornings are for building, afternoons are for the valley. A draft plan for the pilot, so details will change.",
     "days": [
       {
@@ -171,12 +172,12 @@
       {
         "day": "Tuesday",
         "title": "Connect your accounts",
-        "body": "Claude Code in plain words, then your email, calendar and to-dos connected. The inbox gets cleaned up, everything goes into one list, and your morning text is scheduled."
+        "body": "Claude Code in plain words, then your email, calendar and to-dos connected. The inbox gets cleaned up, everything goes into one list, and your morning summary is scheduled."
       },
       {
         "day": "Wednesday",
         "title": "Rest",
-        "body": "Poás volcano at sunrise, hot springs or a slow day. Your first morning text arrives wherever you are."
+        "body": "Poás volcano at sunrise, hot springs or a slow day. Your first morning summary is waiting wherever you are."
       },
       {
         "day": "Thursday",
@@ -190,7 +191,7 @@
       },
       {
         "day": "Saturday",
-        "title": "Go home with it running",
+        "title": "Take it home",
         "body": "Your first weekly review, together, and a 90-day plan. A last security check, then the shuttle to the airport. The cohort chat stays open after you leave."
       }
     ]
@@ -248,7 +249,7 @@
       {
         "icon": "laptop_mac",
         "title": "A laptop",
-        "body": "Mac or Windows, with room to install Claude Code and a password manager."
+        "body": "With room to install Claude Code and a password manager."
       },
       {
         "icon": "key",
@@ -258,12 +259,12 @@
       {
         "icon": "smartphone",
         "title": "Your phone",
-        "body": "Your Should texts you, and you answer from it."
+        "body": "For two-factor codes, and to answer your Should on the go."
       },
       {
         "icon": "checklist",
         "title": "Logins you can reach",
-        "body": "Sign-ins for your email, bank and to-do app, and your phone for two-factor codes. We send a short checklist before you fly."
+        "body": "Sign-ins for your email, calendar and to-do app, and your phone for two-factor codes. We send a short checklist before you fly."
       }
     ]
   },
@@ -335,7 +336,7 @@
     "agentOptions": [
       {
         "value": "Chief of staff",
-        "label": "Chief of staff: morning text, inbox, calendar"
+        "label": "Chief of staff: morning summary, inbox, calendar"
       },
       {
         "value": "Financial advisor",
@@ -371,7 +372,7 @@
       },
       {
         "value": "Receptionist",
-        "label": "Texts and calls, with your yes"
+        "label": "Messages and calls, with your yes (later add-on)"
       },
       {
         "value": "Mail clerk",

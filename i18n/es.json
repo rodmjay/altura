@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Altura · Vete de Costa Rica con tu propio Should",
+    "title": "Altura · La semana en que configuras tu propio Should",
     "description": "Altura es un retiro para reiniciar tu vida en el Valle Central de Costa Rica. En una semana configuras tu propio Should, un equipo de agentes de IA que se encarga de la administración de tu vida, en tu propia computadora y alrededor de tus metas.",
     "ogLocale": "es_419"
   },
@@ -17,8 +17,8 @@
   },
   "hero": {
     "eyebrow": "Altura · un retiro para reiniciar tu vida · Costa Rica",
-    "title": "Ven por una semana. Vete con tu propio Should.",
-    "body": "Should es un equipo de agentes de IA que se encarga de la administración de tu vida: correo, calendario, pendientes, cuentas y metas. En Altura pasas una semana en el Valle Central de Costa Rica configurando el tuyo, en tu propia computadora, junto a profesionales de todo el mundo. Regresas a casa con él funcionando y con una red de contactos que dura.",
+    "title": "Ven por una semana. Configura tu propio Should.",
+    "body": "Should es un equipo de agentes de IA que se encarga de la administración de tu vida: correo, calendario, pendientes, cuentas y metas. Altura es la semana en que configuras el tuyo, en tu propia computadora y con tu propia cuenta de Claude, en el Valle Central de Costa Rica, junto a profesionales de todo el mundo. Regresas a casa con una configuración hecha a la medida de tu vida y una red de contactos que dura.",
     "cta": "Únete a la lista piloto",
     "ctaSecondary": "Mira lo que hace Should",
     "status": "Grupo piloto. Aún no hay fechas ni precio, y anotarte no te compromete a nada.",
@@ -30,9 +30,9 @@
     "body": "Should ya maneja la vida de una persona, todos los días. Resuelve lo pequeño por su cuenta y solo te trae las decisiones que de verdad son tuyas.",
     "points": [
       {
-        "icon": "sms",
-        "title": "Un mensaje cada mañana",
-        "body": "A las 8 AM: las tres cosas que importan hoy, lo que estás esperando y lo que necesita de ti. Nada más."
+        "icon": "chat",
+        "title": "Un resumen cada mañana",
+        "body": "A las 8 AM, en el chat: las tres cosas que importan hoy, lo que estás esperando y lo que necesita de ti. También por mensaje de texto, cuando agregues tu propio número."
       },
       {
         "icon": "groups",
@@ -42,12 +42,12 @@
       {
         "icon": "touch_app",
         "title": "Solo te llegan las decisiones reales",
-        "body": "Todo lo que gasta dinero, le escribe a alguien o no se puede deshacer espera tu sí. Respondes con 1, 2 o 3 desde tu teléfono."
+        "body": "Todo lo que gasta dinero, le escribe a alguien o no se puede deshacer espera tu sí. Respondes con 1, 2 o 3."
       },
       {
         "icon": "dashboard",
         "title": "Un tablero para todo",
-        "body": "Cada agente tiene su escritorio en un tablero privado para tu computadora y tu teléfono, junto a tus proyectos y metas. También puede verse en la tele de tu casa."
+        "body": "Cada agente tiene su escritorio en un tablero privado para tu computadora y tu teléfono, junto a tus proyectos y metas."
       },
       {
         "icon": "explore",
@@ -57,13 +57,14 @@
     ],
     "demoLink": "Recorre la demostración",
     "pageLink": "Lee sobre Should",
-    "ebookLink": "Lee El método Should"
+    "ebookLink": "Lee El método Should (PDF)",
+    "ebookFile": "ebook/should-way.es.pdf"
   },
   "day": {
     "eyebrow": "Una mañana con Should",
     "title": "Respondes con un número y sigues con tu día",
-    "body": "No hay que abrir una app ni revisar nada. Should te escribe una cosa a la vez.",
-    "label": "Ejemplo de conversación por mensaje",
+    "body": "Nada que revisar a fondo. Should te trae una cosa a la vez, en el chat, o por mensaje de texto cuando agregues tu propio número.",
+    "label": "Ejemplo de conversación",
     "texts": [
       {
         "who": "in",
@@ -155,7 +156,7 @@
   },
   "week": {
     "eyebrow": "La semana",
-    "title": "De lo que te importa a tenerlo funcionando",
+    "title": "De lo que te importa a tu propia configuración",
     "body": "Las mañanas son para construir y las tardes para el valle. Es un plan borrador para el piloto, así que los detalles van a cambiar.",
     "days": [
       {
@@ -171,12 +172,12 @@
       {
         "day": "Martes",
         "title": "Conecta tus cuentas",
-        "body": "Claude Code en palabras sencillas, y luego tu correo, calendario y pendientes conectados. Se limpia la bandeja de entrada, todo queda en una sola lista y se programa tu mensaje de la mañana."
+        "body": "Claude Code en palabras sencillas, y luego tu correo, calendario y pendientes conectados. Se limpia la bandeja de entrada, todo queda en una sola lista y se programa tu resumen de la mañana."
       },
       {
         "day": "Miércoles",
         "title": "Descanso",
-        "body": "El volcán Poás al amanecer, aguas termales o un día tranquilo. Tu primer mensaje de la mañana te llega donde estés."
+        "body": "El volcán Poás al amanecer, aguas termales o un día tranquilo. Tu primer resumen de la mañana te espera donde estés."
       },
       {
         "day": "Jueves",
@@ -190,7 +191,7 @@
       },
       {
         "day": "Sábado",
-        "title": "A casa con todo funcionando",
+        "title": "Llévatelo a casa",
         "body": "Tu primera revisión semanal, en grupo, y un plan de 90 días. Una última revisión de seguridad y el traslado al aeropuerto. El chat del grupo sigue abierto después."
       }
     ]
@@ -248,7 +249,7 @@
       {
         "icon": "laptop_mac",
         "title": "Una computadora portátil",
-        "body": "Mac o Windows, con espacio para instalar Claude Code y un gestor de contraseñas."
+        "body": "Con espacio para instalar Claude Code y un gestor de contraseñas."
       },
       {
         "icon": "key",
@@ -258,12 +259,12 @@
       {
         "icon": "smartphone",
         "title": "Tu teléfono",
-        "body": "Tu Should te escribe, y tú respondes desde ahí."
+        "body": "Para los códigos de verificación y para responderle a tu Should desde donde estés."
       },
       {
         "icon": "checklist",
         "title": "Accesos a mano",
-        "body": "Tus inicios de sesión del correo, el banco y la app de pendientes, y tu teléfono para los códigos de verificación. Te mandamos una lista corta antes del viaje."
+        "body": "Tus inicios de sesión del correo, el calendario y la app de pendientes, y tu teléfono para los códigos de verificación. Te mandamos una lista corta antes del viaje."
       }
     ]
   },
@@ -335,7 +336,7 @@
     "agentOptions": [
       {
         "value": "Chief of staff",
-        "label": "Jefe de gabinete: mensaje de la mañana, correo, calendario"
+        "label": "Jefe de gabinete: resumen de la mañana, correo, calendario"
       },
       {
         "value": "Financial advisor",
@@ -371,7 +372,7 @@
       },
       {
         "value": "Receptionist",
-        "label": "Mensajes y llamadas, con tu sí"
+        "label": "Mensajes y llamadas, con tu sí (complemento más adelante)"
       },
       {
         "value": "Mail clerk",
