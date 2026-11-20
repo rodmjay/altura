@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# Copies the built design system into ds/ as a stripped public copy:
-# no comments or package headers, and only the should brand. Run with DS_DIR set to the design system checkout.
+# Refreshes ds/ with a stripped public copy of the shared design system: comments and package headers removed,
+# only the should brand kept. The design system is installed outside this repo; DS_COPY points at its copy script.
 set -euo pipefail
-: "${DS_DIR:?set DS_DIR to the design system checkout}"
 cd "$(dirname "$0")/.."
-node scripts/strip-design-system.mjs "$DS_DIR/dist" ds
-echo '{ "type": "module" }' > ds/package.json
+: "${DS_COPY:?set DS_COPY to the design system copy script (installed outside this repo)}"
+node "$DS_COPY" --public --brand should ds design-system.css i18n.js check-i18n.mjs
