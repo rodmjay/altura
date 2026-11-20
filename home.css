@@ -13,10 +13,8 @@ p { margin: 0; }
   background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); }
 .skip:focus { left: var(--space-4); }
 
-/* Material Symbols as plain glyphs; the words beside them carry the meaning. */
-.ico { font-family: "Material Symbols Outlined"; font-size: 24px; line-height: 1; font-weight: normal; font-style: normal; letter-spacing: normal;
-  text-transform: none; white-space: nowrap; direction: ltr; -webkit-font-smoothing: antialiased; font-feature-settings: "liga";
-  display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; flex: none; overflow: hidden;
+/* Icon tiles: inline Material Symbols SVG (.ds-icon) on a tonal square. */
+.ico { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; flex: none;
   border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); }
 
 /* Top bar */

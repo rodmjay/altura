@@ -49,6 +49,12 @@ function render(tpl, dict, at) {
 const fmtStep = (dict, i) => String(i + 1);
 
 const tpl = readFileSync("src/page.html", "utf8");
+// Material Symbols (Outlined, Apache 2.0) as inline SVG, so an icon name never shows while a font loads.
+const ICONS = JSON.parse(readFileSync("src/icons.json", "utf8"));
+const inlineIcons = (html) => html.replace(/<span class="ico" aria-hidden="true">([a-z_]+)<\/span>/g, (m, name) => {
+  if (!ICONS[name]) throw new Error(`no icon path for "${name}" in src/icons.json`);
+  return `<span class="ico" aria-hidden="true"><svg class="ds-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="${ICONS[name]}"/></svg></span>`;
+});
 for (const lang of ["en", "es"]) {
   const other = lang === "en" ? "es" : "en";
   const at = {
@@ -58,7 +64,7 @@ for (const lang of ["en", "es"]) {
     langScript: langScript(lang),
     langOptions: ["en", "es"].map((l) => `<option value="${l}" lang="${HTML_LANG[l]}"${l === lang ? " selected" : ""}>${NAMES[l]}</option>`).join(""),
   };
-  const html = render(tpl, dicts[lang], at);
+  const html = inlineIcons(render(tpl, dicts[lang], at));
   if (/\{\{[#/@.\w]/.test(html)) throw new Error(`${lang}: unfilled placeholder`);
   const out = lang === "en" ? "index.html" : "es/index.html";
   mkdirSync("es", { recursive: true });
